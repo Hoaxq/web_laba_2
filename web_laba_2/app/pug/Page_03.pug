@@ -1,0 +1,27 @@
+extends template
+
+mixin c(end)
+  - var count = 1;  
+  while count <= end
+    //p= "Hello, my number is" + count
+    - var s = 'img/' + count + '.jpg';
+    img(src=s)
+    - count += 1;
+
+block title
+  title Галерея мультсериалов
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.10.0/js/lightgallery-all.min.js"></script>
+
+block content
+  //.cl-center // Моя реализация галереи
+    .img-class
+      +c(21)
+  div#gallery
+  div.zoop
+  
+block footer 
+  +footer-short-page 
+  script(src='js/js-2 - galerey.js')
+  link(rel="stylesheet", href="css/main_2.css")

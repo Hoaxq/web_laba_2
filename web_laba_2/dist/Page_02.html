@@ -1,0 +1,438 @@
+<html> 
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>Таблица </title>
+    <link rel="stylesheet" href="css/main_2.css"/>
+  </head>
+  <body> 
+    <div class="h1"> <a href="index.html">Самые популярные джорданы</a></div>
+    <div class="h2"> <a href="Page_02.html">Список джорданов</a></div>
+    <div class="h2"> <a href="Page_03.html">Галерея джорданов</a></div>
+    <details open="open">
+      <div class="main-block">
+        <div class="block-01">
+          <div class="table"> 
+            <div class="title-1-1">
+              <p>График:</p>
+            </div>
+            <div class="left-edge-1">
+              <p class="title-1">Значение по оси OХ: </p>
+              <div>
+                <input id="inp2-1" type="radio" name="ox" value="жанр" checked="checked"/>
+                <p>Бренд</p>
+              </div>
+              <div>
+                <input id="inp2-2" type="radio" name="ox" value="жанр"/>
+                <p>Год создания                </p>
+              </div>
+            </div>
+            <div class="right-edge-1">
+              <p class="title-1">Результат:         </p>
+              <div>  
+                <input id="in-2" type="radio" name="result" value="макс"/>
+                <p>Максимальный тираж             </p>
+              </div>
+              <div>
+                <input id="in-3" type="radio" name="result" value="мин" checked="checked"/>
+                <p>Минимальный тираж          </p>
+              </div>
+            </div>
+            <button id="butt-graf">Построить </button>
+          </div>
+        </div>
+        <div class="block-02">
+          <div class="table class_01"> 
+            <div class="title-1-1">
+              <p>Фильтр:</p>
+            </div>
+            <div class="left-edge-1">
+              <p>Название:</p>
+              <p>Бренд:</p>
+              <p>Год (от):	</p>
+              <p>Год (до):	</p>
+              <p>Тираж (от):	</p>
+              <p>Тираж (до):</p>
+            </div>
+            <div class="right-edge-1">
+              <p>
+                <input id="name" type="text" placeholder="Введите название"/>
+              </p>
+              <p>
+                <input id="name" type="text" placeholder="Введите бред"/>
+              </p>
+              <p>
+                <input id="name" type="text" placeholder="Введите год"/>
+              </p>
+              <p>
+                <input id="name" type="text" placeholder="Введите год"/>
+              </p>
+              <p>
+                <input id="name" type="text" placeholder="Введите число"/>
+              </p>
+              <p>
+                <input id="name" type="text" placeholder="Введите число"/>
+              </p>
+            </div>
+            <button id="butt-filter">Найти </button>
+          </div>
+        </div>
+        <div class="block-03">
+          <div class="table-2">
+            <div class="title-1-2">
+              <p>Сортировка:</p>
+            </div>
+            <div class="left-edge-2">
+              <p>Первый уровень</p>
+              <p>Второй уровень </p>
+              <p>Третий уровень</p>
+            </div>
+            <div class="center-edge-2" id="sort-opt"> 
+              <p class="l1">
+                <select>
+                  <option value="0">Нет</option>
+                  <option value="1">Бренд</option>
+                  <option value="2">Название</option>
+                  <option value="3">Год создания</option>
+                  <option value="4">Тираж</option>
+                </select>
+              </p>
+              <p class="l2">
+                <select>
+                  <option value="0">Нет</option>
+                  <option value="1">Бренд</option>
+                  <option value="2">Название</option>
+                  <option value="3">Год создания</option>
+                  <option value="4">Тираж</option>
+                </select>
+              </p>
+              <p class="l3">
+                <select>
+                  <option value="0">Нет</option>
+                  <option value="1">Бренд</option>
+                  <option value="2">Название</option>
+                  <option value="3">Год создания</option>
+                  <option value="4">Тираж</option>
+                </select>
+              </p>
+            </div>
+            <div class="right-edge-2">
+              <p class="no-ind">по убыванию?
+                <input type="checkbox" name="ack1" value="ack1"/>
+              </p>
+              <p class="no-ind">по убыванию?
+                <input type="checkbox" name="ack1" value="ack1"/>
+              </p>
+              <p class="no-ind">по убыванию?
+                <input type="checkbox" name="ack1" value="ack1"/>
+              </p>
+            </div>
+            <button id="butt-sort">Построить </button>
+          </div>
+        </div>
+      </div>
+      <div class="block-graf">
+        <p>График:</p>
+        <div id="graf-container">
+          <div class="curr-graff"></div>
+        </div>
+      </div>
+    </details>
+    <p class="text-001">Таблица</p>
+
+    <div id="bad-news"> 
+      <p>Записей по данному запросу не найдено</p>
+    </div>
+    <div id="table-container">
+      <table id="my-table">
+        <tr class="title">
+          <td>Бренд</td>
+          <td>Название</td>
+          <td>Год создания</td>
+          <td>Тираж</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Midnight Navy</td>
+          <td>2007</td>
+          <td>9000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Why Not Zer0.4</td>
+          <td>2007</td>
+          <td>50000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Jordan Flight Origin 4</td>
+          <td>2007</td>
+          <td>45000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Photon Dust</td>
+          <td>2006</td>
+          <td>60000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 A Ma Maniere Violet Ore</td>
+          <td>2010</td>
+          <td>10000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro</td>
+          <td>2009</td>
+          <td>30000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Encore</td>
+          <td>2013</td>
+          <td>40000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Black Cat</td>
+          <td>2014</td>
+          <td>20000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Military Black</td>
+          <td>2010</td>
+          <td>70000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Infraned</td>
+          <td>2020</td>
+          <td>20200</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro golf</td>
+          <td>2021</td>
+          <td>40000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Zen Master</td>
+          <td>2022</td>
+          <td>300000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Red Thunder</td>
+          <td>2011</td>
+          <td>111111</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Union Air Jordan 4 Retro SP 30th Anniversany</td>
+          <td>2009</td>
+          <td>22222</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Golf</td>
+          <td>2001</td>
+          <td>20000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro</td>
+          <td>2002</td>
+          <td>2345</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro University Blue</td>
+          <td>2015</td>
+          <td>9999</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro White Oreo</td>
+          <td>2013</td>
+          <td>30000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Ligthing 2021</td>
+          <td>2014</td>
+          <td>20000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Deep Ocean Blue</td>
+          <td>2015</td>
+          <td>10000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Fire Red 2020</td>
+          <td>2020</td>
+          <td>3000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Paris Saint Germain</td>
+          <td>2023</td>
+          <td>5000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 SP off-noir</td>
+          <td>2013</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 SP Guava Ice</td>
+          <td>2002</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan What The</td>
+          <td>2009</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan Hight Jordan 4</td>
+          <td>2003</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro SE Fiba</td>
+          <td>2004</td>
+          <td>1002</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Raptors/Drake Ovo</td>
+          <td>2007</td>
+          <td>30000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro Bred 2019 Release</td>
+          <td>2009</td>
+          <td>50000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 12 Retro Premium</td>
+          <td>2003</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro SNGL DY</td>
+          <td>2006</td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro NRG</td>
+          <td>2000</td>
+          <td>30000</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro 30th</td>
+          <td>2010</td>
+          <td>40424</td>
+        </tr>
+        <tr>
+          <td>Jordan</td>
+          <td>Air Jordan 4 Retro LS Oreo</td>
+          <td>2020</td>
+          <td>41241</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Triple S</td>
+          <td>2023</td>
+          <td>52121</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Speed for adidas</td>
+          <td>2016</td>
+          <td>4142</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Speed 2.0</td>
+          <td>2017</td>
+          <td>12414</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>X-Pander</td>
+          <td>2010</td>
+          <td>98798</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Paris</td>
+          <td>2003</td>
+          <td>51521</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Defender</td>
+          <td>2011</td>
+          <td>1412</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Destroy Upper</td>
+          <td>2020</td>
+          <td>89090</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Track</td>
+          <td>2009</td>
+          <td>42121</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Strike</td>
+          <td>2004</td>
+          <td>7890</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Track.2</td>
+          <td>2018</td>
+          <td>3222</td>
+        </tr>
+        <tr>
+          <td>Balenciaga</td>
+          <td>Rhino</td>
+          <td>2017</td>
+          <td>210</td>
+        </tr>
+      </table>
+    </div>
+    <div class="my-block-1"></div>
+  </body>
+  <div class="page-footer">
+    <div class="fixed-bottom"> 
+      <p>made by <a href="https://vk.com/petroffphil">Petrov Philip</a></p>
+    </div>
+  </div>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="js/js-3.js"></script>
+  <script src="js/js-3-diagramm.js"></script>
+</html>

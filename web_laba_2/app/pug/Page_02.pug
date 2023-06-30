@@ -1,0 +1,168 @@
+extends template
+
+mixin my-option
+  select
+    option(value='0') --- Нет ---
+    option(value='1') Бред
+    option(value='2') Название
+    option(value='3') Год создания
+    option(value='4') Тираж
+
+block title
+  title Таблица 
+  link(rel="stylesheet", href="css/main_2.css")
+
+mixin table-create(a, b, c, d)
+  tr
+    td=a
+    td=b
+    td=c
+    td=d
+
+block footer 
+  +footer-long-page 
+  //script(src="http://d3js.org/d3.v7.js")
+  script(src="https://d3js.org/d3.v5.min.js")
+  script(src='js/js-3.js')
+  script(src='js/js-3-diagramm.js')
+  
+
+block content
+    details(open)
+      summary.text-002 Блок настроек показа
+      .main-block
+        .block-01
+          .table 
+            .title-1-1
+              p График:
+            .left-edge-1
+              p.title-1 Значение по оси OХ: 
+              div
+                input#inp2-1(type='radio', name='ox', value='жанр', checked)
+                p Бренд
+              div
+                input#inp2-2(type='radio', name='ox', value='жанр')
+                p Год создания                
+            .right-edge-1
+              p.title-1 Результат:         
+              div   
+                input#in-2(type='radio', name='result', value='макс')    
+                p Максимальный тираж             
+              div
+                input#in-3(type='radio', name='result', value='мин', checked)
+                p Минимальный тираж          
+            button#butt-graf Построить 
+        .block-02
+          .table.class_01 
+            .title-1-1
+              p Фильтр:
+            .left-edge-1
+              p Название:
+              p Бред:
+              p Год (от):	
+              p Год (до):	
+              p Тираж (от):	
+              p Тираж (до):
+            .right-edge-1
+              p
+                input#name(type='text', placeholder='Введите название')
+              p
+                input#name(type='text', placeholder='Введите бред')
+              p
+                input#name(type='text', placeholder='Введите год')
+              p
+                input#name(type='text', placeholder='Введите год')
+              p
+                input#name(type='text', placeholder='Введите число')
+              p
+                input#name(type='text', placeholder='Введите число')
+            button#butt-filter Найти 
+        .block-03
+          .table-2
+            .title-1-2
+              p Сортировка:
+            .left-edge-2
+              p Первый уровень
+              p Второй уровень 
+              p Третий уровень
+            .center-edge-2#sort-opt 
+              p.l1
+                +my-option
+              p.l2
+                +my-option
+              p.l3
+                +my-option
+            .right-edge-2
+              p.no-ind по убыванию?
+                input(type='checkbox', name='ack1', value='ack1')
+              p.no-ind по убыванию?
+                input(type='checkbox', name='ack1', value='ack1')
+              p.no-ind по убыванию?
+                input(type='checkbox', name='ack1', value='ack1')
+            button#butt-sort Построить 
+      div.block-graf
+        p График:
+        div#graf-container
+          div.curr-graff
+      
+    p.text-001 Таблица
+
+    //.f50px-spase
+      p
+
+    #bad-news 
+      p Записей по данному запросу не найдено :(
+
+    #table-container
+      table#my-table
+        tr.title
+          td Бренд
+          td Название
+          td Год создания
+          td Тираж
+
+        +table-create('Jordan', 'Air Jordan 4 Midnight Navy', '2007', '9000')
+        +table-create('Jordan', 'Why Not Zer0.4', '2007', '50000')
+        +table-create('Jordan', 'Jordan Flight Origin 4', '2007', '45000')
+        +table-create('Jordan', 'Air Jordan 4 Photon Dust', '2006','60000')
+        +table-create('Jordan', 'Air Jordan 4 A Ma Maniere Violet Ore','2010','10000')
+        +table-create('Jordan', 'Air Jordan 4 Retro', '2009', '30000')
+        +table-create('Jordan', 'Air Jordan 4 Encore', '2013', '40000')
+        +table-create('Jordan', 'Air Jordan 4 Black Cat', '2014', '20000')
+        +table-create('Jordan', 'Air Jordan 4 Retro Military Black', '2010', '70000')
+        +table-create('Jordan', 'Air Jordan 4 Retro Infraned', '2020', '20200')
+        +table-create('Jordan', 'Air Jordan 4 Retro golf', '2021', '40000')
+        +table-create('Jordan', 'Air Jordan 4 Retro Zen Master', '2022', '300000')
+        +table-create('Jordan', 'Air Jordan 4 Retro Red Thunder', '2011', '111111')
+        +table-create('Jordan', 'Union Air Jordan 4 Retro SP 30th Anniversany', '2009', '22222')
+        +table-create('Jordan', 'Air Jordan 4 Retro Golf', '2001', '20000')
+        +table-create('Jordan', 'Air Jordan 4 Retro', '2002', '2345')
+        +table-create('Jordan', 'Air Jordan 4 Retro University Blue', '2015', '9999')
+        +table-create('Jordan', 'Air Jordan 4 Retro White Oreo', '2013', '30000')
+        +table-create('Jordan', 'Air Jordan 4 Retro Ligthing 2021', '2014', '20000')
+        +table-create('Jordan', 'Air Jordan 4 Retro Deep Ocean Blue', '2015', '10000')
+        +table-create('Jordan', 'Air Jordan 4 Retro Fire Red 2020', '2020', '3000')
+        +table-create('Jordan', 'Air Jordan 4 Retro Paris Saint Germain', '2023', '5000')
+        +table-create('Jordan', 'Air Jordan 4 SP off-noir', '2013', '1')
+        +table-create('Jordan', 'Air Jordan 4 SP Guava Ice', '2002', '11')
+        +table-create('Jordan', 'Air Jordan What The', '2009', '200')
+        +table-create('Jordan', 'Air Jordan Hight Jordan 4', '2003', '100')
+        +table-create('Jordan', 'Air Jordan 4 Retro SE Fiba', '2004', '1002')
+        +table-create('Jordan', 'Air Jordan 4 Retro Raptors/Drake Ovo', '2007', '30000')
+        +table-create('Jordan', 'Air Jordan 4 Retro Bred 2019 Release', '2009', '50000')
+        +table-create('Jordan', 'Air Jordan 12 Retro Premium', '2003', '15')
+        +table-create('Jordan', 'Air Jordan 4 Retro SNGL DY', '2006', '19')
+        +table-create('Jordan', 'Air Jordan 4 Retro NRG', '2000', '30000')
+        +table-create('Jordan', 'Air Jordan 4 Retro 30th', '2010', '40424')
+        +table-create('Jordan', 'Air Jordan 4 Retro LS Oreo', '2020', '41241')
+        +table-create('Balenciaga', 'Triple S', '2023', '52121')
+        +table-create('Balenciaga', 'Speed for adidas', '2016', '4142')
+        +table-create('Balenciaga', 'Speed 2.0', '2017', '12414')
+        +table-create('Balenciaga', 'X-Pander', '2010', '98798')
+        +table-create('Balenciaga', 'Paris', '2003', '51521')
+        +table-create('Balenciaga', 'Defender', '2011', '1412')
+        +table-create('Balenciaga', 'Destroy Upper', '2020', '89090')
+        +table-create('Balenciaga', 'Track', '2009', '42121')
+        +table-create('Balenciaga', 'Strike', '2004', '7890')
+        +table-create('Balenciaga', 'Track.2', '2018', '3222')
+        +table-create('Balenciaga', 'Rhino', '2017', '210')

@@ -1,0 +1,38 @@
+mixin block-content-2(myImg='1', t1='Нет заголовка', t2='Нет описания')  
+  hr
+  .block-title
+    if(myImg == '1') 
+      img(alt='Нет картинки')
+    else 
+      img(src = myImg)
+    p=t1
+    .main-title
+      p=t2
+
+mixin footer-long-page 
+  .page-footer
+    .fixed-bottom 
+      p made by 
+        a(href = 'https://vk.com/petroffphil') Petrov Philip
+
+mixin footer-short-page 
+  .page-footer.fixed-bottom
+      p made by 
+        a(href = 'https://vk.com/petroffphil') Petrov Philip
+
+// ---
+
+html 
+  head
+    include headCode
+    block title 
+  body 
+    .h1 
+      a(href="index.html") Самые популярные джорданы
+    .h2 
+      a(href="Page_02.html") Список джорданов
+    .h2 
+      a(href="Page_03.html") Галерея джорданов
+    block content
+    .my-block-1
+  block footer
